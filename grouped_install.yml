@@ -1,0 +1,31 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index for Ubuntu
+    apt:
+      update_cache: yes
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+  - name: install apache2 and php package for Ubuntu
+    apt:
+      name:
+        - apache2
+        - libapache2-mod-php
+      state: latest
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+  - name: update repostory index for RedHat
+    dnf:
+      update_cache: yes
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: install httpd and php package for RedHat
+    dnf:
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_facts["distribution"] == "RedHat"
