@@ -1,0 +1,62 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates (RedHat)
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: install updates (Ubuntu)
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: uninstall apache and php for Ubuntu servers
+    apt:
+      name:
+        - apache2
+        - libapache2-mod-php
+      state: absent
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+  - name: uninstall apache and php for RedHat servers
+    dnf:
+      name:
+        - httpd
+        - php
+      state: absent
+    when: ansible_facts["distribution"] == "RedHat"
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: uninstall mariadb package(RedHat)
+    dnf:
+      name: mariadb-server
+      state: absent
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: uninstall mariadb package(Ubunt)
+    apt:
+      name: mariadb-server
+      state: absent
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: uninstall samba package
+    package:
+      name: samba
+      state: absent

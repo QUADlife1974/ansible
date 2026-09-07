@@ -9077,3 +9077,249 @@ Origin: /home/ansible/ansible/improve_tasks.yml:26:11
 2026-09-04 15:57:41,529 p=2739 u=ansible n=ansible INFO| ok: [192.168.100.10]
 2026-09-04 15:57:41,532 p=2739 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
 2026-09-04 15:57:41,532 p=2739 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-09-07 13:03:39,432 p=994 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:03:39,435 p=994 u=ansible n=ansible INFO| 192.168.100.10 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.14"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-09-07 13:09:26,748 p=1241 u=ansible n=ansible ERROR| [ERROR]: User interrupted execution
+
+2026-09-07 13:10:15,900 p=1323 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:10:15,934 p=1323 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:10:21,692 p=1323 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:10:21,692 p=1323 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:10:21,699 p=1323 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:10:21,728 p=1323 u=ansible n=ansible ERROR| [ERROR]: Task failed: Error while evaluating conditional: 'ansible' is undefined
+
+Task failed.
+Origin: /home/ansible/ansible/group_install_3.yml:7:5
+
+5   tasks:
+6
+7   - name: install apache and php for Ubuntu servers
+      ^ column 5
+
+<<< caused by >>>
+
+Error while evaluating conditional: 'ansible' is undefined
+Origin: /home/ansible/ansible/group_install_3.yml:15:11
+
+13       update_cache: yes
+14
+15     when: ansible.facts["distribution"] == "Ubuntu"
+             ^ column 11
+
+
+2026-09-07 13:10:21,796 p=1323 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: 'ansible' is undefined"}
+2026-09-07 13:10:21,798 p=1323 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:10:21,798 p=1323 u=ansible n=ansible INFO| 192.168.100.10             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-09-07 13:11:31,120 p=1394 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:11:31,152 p=1394 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:11:33,927 p=1394 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:11:33,928 p=1394 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:11:33,935 p=1394 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:11:33,964 p=1394 u=ansible n=ansible ERROR| [ERROR]: Task failed: Error while evaluating conditional: 'ansible' is undefined
+
+Task failed.
+Origin: /home/ansible/ansible/group_install_3.yml:7:5
+
+5   tasks:
+6
+7   - name: install apache and php for Ubuntu servers
+      ^ column 5
+
+<<< caused by >>>
+
+Error while evaluating conditional: 'ansible' is undefined
+Origin: /home/ansible/ansible/group_install_3.yml:14:11
+
+12       state: latest
+13       update_cache: yes
+14     when: ansible.facts["distribution"] == "Ubuntu"
+             ^ column 11
+
+
+2026-09-07 13:11:33,965 p=1394 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: 'ansible' is undefined"}
+2026-09-07 13:11:33,967 p=1394 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:11:33,967 p=1394 u=ansible n=ansible INFO| 192.168.100.10             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-09-07 13:12:40,074 p=1477 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:12:40,088 p=1477 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:12:45,507 p=1477 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:12:45,507 p=1477 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:12:45,515 p=1477 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:12:45,540 p=1477 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:12:45,618 p=1477 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:12:45,648 p=1477 u=ansible n=ansible ERROR| [ERROR]: Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'distirbution'
+
+Task failed.
+Origin: /home/ansible/ansible/group_install_3.yml:16:5
+
+14     when: ansible_facts["distribution"] == "Ubuntu"
+15
+16   - name: install apache and php for RedHat servers
+       ^ column 5
+
+<<< caused by >>>
+
+Error while evaluating conditional: object of type 'dict' has no attribute 'distirbution'
+Origin: /home/ansible/ansible/group_install_3.yml:23:11
+
+21       state: latest
+22       update_cache: True
+23     when: ansible_facts["distirbution"] == "RedHat"
+             ^ column 11
+
+
+2026-09-07 13:12:45,649 p=1477 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "Task failed: Error while evaluating conditional: object of type 'dict' has no attribute 'distirbution'"}
+2026-09-07 13:12:45,650 p=1477 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:12:45,651 p=1477 u=ansible n=ansible INFO| 192.168.100.10             : ok=1    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2026-09-07 13:13:36,300 p=1530 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:13:36,331 p=1530 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:13:39,265 p=1530 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:13:39,265 p=1530 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:13:39,275 p=1530 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:13:39,300 p=1530 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:13:39,366 p=1530 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:13:50,624 p=1530 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:13:50,627 p=1530 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:13:50,627 p=1530 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-09-07 13:22:22,172 p=1637 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:22:22,205 p=1637 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:22:25,315 p=1637 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:22:25,316 p=1637 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:22:25,323 p=1637 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:22:25,349 p=1637 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:22:25,414 p=1637 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:22:39,249 p=1637 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:22:39,251 p=1637 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:22:39,252 p=1637 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-09-07 13:36:06,012 p=1725 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:36:06,045 p=1725 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:36:09,375 p=1725 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:36:09,375 p=1725 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:36:09,443 p=1725 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-07 13:36:21,660 p=1725 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:36:21,671 p=1725 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-07 13:36:21,698 p=1725 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:36:21,705 p=1725 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-07 13:36:21,718 p=1725 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:36:24,176 p=1725 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:36:24,188 p=1725 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:36:24,215 p=1725 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:36:24,223 p=1725 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:36:32,106 p=1725 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:36:32,109 p=1725 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:36:32,110 p=1725 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-09-07 13:36:58,288 p=1791 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:36:58,305 p=1791 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:37:01,844 p=1791 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:37:01,845 p=1791 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:37:01,855 p=1791 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-07 13:37:12,589 p=1791 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:37:12,600 p=1791 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-07 13:37:12,626 p=1791 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:37:12,632 p=1791 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-07 13:37:12,644 p=1791 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:37:14,442 p=1791 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:37:14,449 p=1791 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:37:14,480 p=1791 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:37:14,488 p=1791 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:37:20,229 p=1791 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:37:20,232 p=1791 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:37:20,232 p=1791 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-09-07 13:40:06,400 p=1857 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:40:06,432 p=1857 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:40:13,088 p=1857 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:40:13,089 p=1857 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:40:13,099 p=1857 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-07 13:40:25,752 p=1857 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:40:25,761 p=1857 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-07 13:40:25,788 p=1857 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:40:25,796 p=1857 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-07 13:40:25,809 p=1857 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:40:27,935 p=1857 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:40:27,944 p=1857 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:40:27,970 p=1857 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:40:27,979 p=1857 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:40:34,368 p=1857 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:40:34,375 p=1857 u=ansible n=ansible INFO| PLAY [db_servers] **************************************************************
+2026-09-07 13:40:34,385 p=1857 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:40:36,761 p=1857 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:40:36,769 p=1857 u=ansible n=ansible INFO| TASK [install mariadb package(RedHat)] *****************************************
+2026-09-07 13:40:46,777 p=1857 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:40:46,786 p=1857 u=ansible n=ansible INFO| TASK [install mariadb package(Ubunt)] ******************************************
+2026-09-07 13:40:46,814 p=1857 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:40:46,816 p=1857 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:40:46,817 p=1857 u=ansible n=ansible INFO| 192.168.100.10             : ok=6    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-09-07 13:51:54,856 p=2145 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-07 13:51:54,887 p=2145 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:51:58,176 p=2145 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:51:58,177 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:51:58,251 p=2145 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-07 13:52:09,729 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:09,741 p=2145 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-07 13:52:09,772 p=2145 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:52:09,780 p=2145 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-07 13:52:09,793 p=2145 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:52:15,020 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:15,030 p=2145 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-07 13:52:15,061 p=2145 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:52:15,075 p=2145 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-07 13:52:21,937 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:21,944 p=2145 u=ansible n=ansible INFO| PLAY [db_servers] **************************************************************
+2026-09-07 13:52:21,956 p=2145 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:52:23,607 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:23,617 p=2145 u=ansible n=ansible INFO| TASK [install mariadb package(RedHat)] *****************************************
+2026-09-07 13:52:30,092 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:30,162 p=2145 u=ansible n=ansible INFO| TASK [install mariadb package(Ubunt)] ******************************************
+2026-09-07 13:52:30,193 p=2145 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:52:30,200 p=2145 u=ansible n=ansible INFO| PLAY [file_servers] ************************************************************
+2026-09-07 13:52:30,213 p=2145 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-07 13:52:33,208 p=2145 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:52:33,375 p=2145 u=ansible n=ansible INFO| TASK [install samba package] ***************************************************
+2026-09-07 13:52:49,534 p=2145 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:52:49,536 p=2145 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-07 13:52:49,537 p=2145 u=ansible n=ansible INFO| 192.168.100.10             : ok=8    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-09-07 13:55:28,687 p=2325 u=ansible n=ansible INFO| PLAY [all] *************************************************************************************************************************************************
+2026-09-07 13:55:28,720 p=2325 u=ansible n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2026-09-07 13:55:31,752 p=2325 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-07 13:55:31,752 p=2325 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:55:31,827 p=2325 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ****************************************************************************************************************************
+2026-09-07 13:55:41,652 p=2325 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:55:41,663 p=2325 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ****************************************************************************************************************************
+2026-09-07 13:55:41,689 p=2325 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:55:41,695 p=2325 u=ansible n=ansible INFO| PLAY [web_servers] *****************************************************************************************************************************************
+2026-09-07 13:55:41,706 p=2325 u=ansible n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2026-09-07 13:55:43,512 p=2325 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:55:43,520 p=2325 u=ansible n=ansible INFO| TASK [uninstall apache and php for Ubuntu servers] *********************************************************************************************************
+2026-09-07 13:55:43,546 p=2325 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:55:43,554 p=2325 u=ansible n=ansible INFO| TASK [uninstall apache and php for RedHat servers] *********************************************************************************************************
+2026-09-07 13:55:51,166 p=2325 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:55:51,172 p=2325 u=ansible n=ansible INFO| PLAY [db_servers] ******************************************************************************************************************************************
+2026-09-07 13:55:51,184 p=2325 u=ansible n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2026-09-07 13:55:53,241 p=2325 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:55:53,248 p=2325 u=ansible n=ansible INFO| TASK [uninstall mariadb package(RedHat)] *******************************************************************************************************************
+2026-09-07 13:56:07,164 p=2325 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:56:07,173 p=2325 u=ansible n=ansible INFO| TASK [uninstall mariadb package(Ubunt)] ********************************************************************************************************************
+2026-09-07 13:56:07,198 p=2325 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-07 13:56:07,205 p=2325 u=ansible n=ansible INFO| PLAY [file_servers] ****************************************************************************************************************************************
+2026-09-07 13:56:07,215 p=2325 u=ansible n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2026-09-07 13:56:18,957 p=2325 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-07 13:56:19,008 p=2325 u=ansible n=ansible INFO| TASK [uninstall samba package] *****************************************************************************************************************************
+2026-09-07 13:56:32,687 p=2325 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-07 13:56:32,690 p=2325 u=ansible n=ansible INFO| PLAY RECAP *************************************************************************************************************************************************
+2026-09-07 13:56:32,690 p=2325 u=ansible n=ansible INFO| 192.168.100.10             : ok=8    changed=3    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
