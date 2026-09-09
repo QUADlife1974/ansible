@@ -9506,3 +9506,125 @@ Origin: /home/ansible/ansible/group_install_3.yml:23:11
 2026-09-08 11:54:44,718 p=1297 u=ansible n=ansible INFO| ok: [192.168.100.10]
 2026-09-08 11:54:44,720 p=1297 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
 2026-09-08 11:54:44,721 p=1297 u=ansible n=ansible INFO| 192.168.100.10             : ok=8    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-09-09 10:31:38,184 p=801 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-09 10:31:38,218 p=801 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:31:43,883 p=801 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-09 10:31:43,883 p=801 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:31:43,894 p=801 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-09 10:31:54,802 p=801 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:31:54,812 p=801 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-09 10:31:54,839 p=801 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:31:54,846 p=801 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-09 10:31:54,859 p=801 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:31:56,559 p=801 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:31:56,567 p=801 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-09 10:31:56,596 p=801 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:31:56,604 p=801 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-09 10:32:05,763 p=801 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-09 10:32:05,843 p=801 u=ansible n=ansible INFO| TASK [copy default html file for site] *****************************************
+2026-09-09 10:32:08,164 p=801 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-09 10:32:08,172 p=801 u=ansible n=ansible INFO| PLAY [db_servers] **************************************************************
+2026-09-09 10:32:08,183 p=801 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:32:09,711 p=801 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:32:09,720 p=801 u=ansible n=ansible INFO| TASK [install mariadb package(RedHat)] *****************************************
+2026-09-09 10:32:21,850 p=801 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-09 10:32:21,859 p=801 u=ansible n=ansible INFO| TASK [install mariadb package(Ubunt)] ******************************************
+2026-09-09 10:32:21,888 p=801 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:32:21,894 p=801 u=ansible n=ansible INFO| PLAY [file_servers] ************************************************************
+2026-09-09 10:32:21,907 p=801 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:32:23,606 p=801 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:32:23,832 p=801 u=ansible n=ansible INFO| TASK [install samba package] ***************************************************
+2026-09-09 10:32:32,886 p=801 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-09 10:32:32,888 p=801 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-09 10:32:32,889 p=801 u=ansible n=ansible INFO| 192.168.100.10             : ok=9    changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-09-09 10:50:40,103 p=1298 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-09 10:50:40,133 p=1298 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:50:44,981 p=1298 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-09 10:50:44,982 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:50:45,062 p=1298 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-09 10:50:55,885 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:50:55,894 p=1298 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-09 10:50:55,926 p=1298 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:50:55,929 p=1298 u=ansible n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: workstations
+
+2026-09-09 10:50:55,931 p=1298 u=ansible n=ansible INFO| PLAY [workstations] ************************************************************
+2026-09-09 10:50:55,931 p=1298 u=ansible n=ansible INFO| skipping: no hosts matched
+2026-09-09 10:50:55,935 p=1298 u=ansible n=ansible INFO| PLAY [web_servers] *************************************************************
+2026-09-09 10:50:55,946 p=1298 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:50:57,652 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:50:57,660 p=1298 u=ansible n=ansible INFO| TASK [install apache and php for Ubuntu servers] *******************************
+2026-09-09 10:50:57,690 p=1298 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:50:57,698 p=1298 u=ansible n=ansible INFO| TASK [install apache and php for RedHat servers] *******************************
+2026-09-09 10:51:04,676 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:04,753 p=1298 u=ansible n=ansible INFO| TASK [copy default html file for site] *****************************************
+2026-09-09 10:51:07,228 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:07,236 p=1298 u=ansible n=ansible INFO| PLAY [db_servers] **************************************************************
+2026-09-09 10:51:07,247 p=1298 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:51:08,792 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:08,800 p=1298 u=ansible n=ansible INFO| TASK [install mariadb package(RedHat)] *****************************************
+2026-09-09 10:51:14,323 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:14,332 p=1298 u=ansible n=ansible INFO| TASK [install mariadb package(Ubunt)] ******************************************
+2026-09-09 10:51:14,359 p=1298 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:51:14,366 p=1298 u=ansible n=ansible INFO| PLAY [file_servers] ************************************************************
+2026-09-09 10:51:14,377 p=1298 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:51:16,020 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:16,227 p=1298 u=ansible n=ansible INFO| TASK [install samba package] ***************************************************
+2026-09-09 10:51:21,690 p=1298 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:51:21,693 p=1298 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-09 10:51:21,693 p=1298 u=ansible n=ansible INFO| 192.168.100.10             : ok=9    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-09-09 10:51:57,073 p=1421 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-09 10:51:57,108 p=1421 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:52:01,887 p=1421 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-09 10:52:01,888 p=1421 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:52:01,952 p=1421 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-09 10:52:12,902 p=1421 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:52:12,911 p=1421 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-09 10:52:12,937 p=1421 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:52:12,944 p=1421 u=ansible n=ansible INFO| PLAY [workstations] ************************************************************
+2026-09-09 10:52:12,955 p=1421 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:52:14,586 p=1421 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:52:14,793 p=1421 u=ansible n=ansible INFO| TASK [install unzip] ***********************************************************
+2026-09-09 10:52:21,170 p=1421 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:52:21,236 p=1421 u=ansible n=ansible INFO| TASK [install terraform] *******************************************************
+2026-09-09 10:52:25,708 p=1421 u=ansible n=ansible ERROR| [ERROR]: Task failed: Module failed: Failure downloading https://releases.hashicopr.com/terraform/0.12.8/terraform_0.12.28_linux.amd64.zip, Request failed: <urlopen error [Errno -2] Name or service not known>
+Origin: /home/ansible/ansible/site-install.yml:29:5
+
+27       name: unzip
+28
+29   - name: install terraform
+       ^ column 5
+
+
+2026-09-09 10:52:25,710 p=1421 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "Failure downloading https://releases.hashicopr.com/terraform/0.12.8/terraform_0.12.28_linux.amd64.zip, Request failed: <urlopen error [Errno -2] Name or service not known>"}
+2026-09-09 10:52:25,711 p=1421 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-09 10:52:25,712 p=1421 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2026-09-09 10:53:07,048 p=1494 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-09 10:53:07,081 p=1494 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:53:11,258 p=1494 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-09 10:53:11,259 p=1494 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:53:11,324 p=1494 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-09 10:53:27,012 p=1494 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:53:27,024 p=1494 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-09 10:53:27,051 p=1494 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-09 10:53:27,057 p=1494 u=ansible n=ansible INFO| PLAY [workstations] ************************************************************
+2026-09-09 10:53:27,068 p=1494 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-09 10:53:29,586 p=1494 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:53:29,777 p=1494 u=ansible n=ansible INFO| TASK [install unzip] ***********************************************************
+2026-09-09 10:53:35,611 p=1494 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-09 10:53:35,684 p=1494 u=ansible n=ansible INFO| TASK [install terraform] *******************************************************
+2026-09-09 10:53:38,470 p=1494 u=ansible n=ansible ERROR| [ERROR]: Task failed: Module failed: Failure downloading https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.28_linux.amd64.zip, HTTP Error 404: Not Found
+Origin: /home/ansible/ansible/site-install.yml:29:5
+
+27       name: unzip
+28
+29   - name: install terraform
+       ^ column 5
+
+
+2026-09-09 10:53:38,471 p=1494 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "Failure downloading https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.28_linux.amd64.zip, HTTP Error 404: Not Found"}
+2026-09-09 10:53:38,473 p=1494 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-09 10:53:38,473 p=1494 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
