@@ -1,0 +1,102 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates (RedHat)
+    tags: always
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: install updates (Ubuntu)
+    tags: always    
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+- hosts: workstations
+  become: true
+  tasks:
+
+  - name: install unzip
+    package:
+      name: unzip
+
+#  - name: install terraform
+#    unarchive:
+#      src: https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.28_linux.amd64.zip
+ #     dest: /usr/local/bin
+  #    remote_src: yes
+   #   mode: 0755
+    #  owner: root
+     # group: root
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: install apache and php for Ubuntu servers
+    tags: apache,apache2,ubuntu
+    apt:
+      name:
+        - apache2
+        - libapache2-mod-php
+      state: latest
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+  - name: install apache and php for RedHat servers
+    tags: apache,RedHat,httpd
+    dnf:
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: start httpd (RedHat)
+    tags: apache,centos,httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: copy default html file for site
+    tags: apache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: install mariadb package(RedHat)
+    tags: RedHat,db,mariadb    
+    dnf:
+      name: mariadb-server
+      state: latest
+    when: ansible_facts["distribution"] == "RedHat"
+
+  - name: install mariadb package(Ubunt)
+    tags: ubuntu,db,mariadb    
+    apt:
+      name: mariadb-server
+      state: latest
+    when: ansible_facts["distribution"] == "Ubuntu"
+
+- hosts: file_servers
+  become: true
+  tasks:
+
+  - name: install samba package
+    tags: samba
+    package:
+      name: samba
+      state: latest
