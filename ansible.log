@@ -9816,3 +9816,51 @@ Origin: /home/ansible/ansible/site-3.yml:57:11
 2026-09-10 13:43:32,672 p=1437 u=ansible n=ansible INFO| ok: [192.168.100.10]
 2026-09-10 13:43:32,673 p=1437 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
 2026-09-10 13:43:32,673 p=1437 u=ansible n=ansible INFO| 192.168.100.10             : ok=11   changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2026-09-14 16:35:56,051 p=721 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-14 16:35:56,088 p=721 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-14 16:36:00,308 p=721 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-14 16:36:00,309 p=721 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:36:00,317 p=721 u=ansible n=ansible INFO| TASK [create simon user] *******************************************************
+2026-09-14 16:36:05,180 p=721 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-14 16:36:05,183 p=721 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-14 16:36:05,184 p=721 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-09-14 16:46:52,107 p=1257 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-14 16:46:52,145 p=1257 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-14 16:46:55,058 p=1257 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-14 16:46:55,058 p=1257 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:46:55,066 p=1257 u=ansible n=ansible INFO| TASK [create simon user] *******************************************************
+2026-09-14 16:46:56,307 p=1257 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:46:56,315 p=1257 u=ansible n=ansible INFO| TASK [add ssh key for simon] ***************************************************
+2026-09-14 16:46:57,532 p=1257 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-14 16:46:57,611 p=1257 u=ansible n=ansible INFO| TASK [add sudoers file for simon] **********************************************
+2026-09-14 16:46:59,690 p=1257 u=ansible n=ansible INFO| changed: [192.168.100.10]
+2026-09-14 16:46:59,693 p=1257 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-14 16:46:59,693 p=1257 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-09-14 16:54:15,469 p=1492 u=ansible n=ansible ERROR| [ERROR]: the playbook: . does not appear to be a file
+
+2026-09-14 16:54:19,081 p=1504 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-14 16:54:19,119 p=1504 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-14 16:54:23,089 p=1504 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-14 16:54:23,090 p=1504 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:54:23,098 p=1504 u=ansible n=ansible INFO| TASK [create simon user] *******************************************************
+2026-09-14 16:54:24,323 p=1504 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:54:24,332 p=1504 u=ansible n=ansible INFO| TASK [add ssh key for simon] ***************************************************
+2026-09-14 16:54:25,560 p=1504 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:54:25,638 p=1504 u=ansible n=ansible INFO| TASK [add sudoers file for simon] **********************************************
+2026-09-14 16:54:27,636 p=1504 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 16:54:27,639 p=1504 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-14 16:54:27,639 p=1504 u=ansible n=ansible INFO| 192.168.100.10             : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-09-14 17:00:08,831 p=1625 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-14 17:00:08,866 p=1625 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-14 17:00:14,712 p=1625 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-14 17:00:14,713 p=1625 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 17:00:14,790 p=1625 u=ansible n=ansible INFO| TASK [install updates (RedHat)] ************************************************
+2026-09-14 17:02:11,432 p=1625 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-14 17:02:11,449 p=1625 u=ansible n=ansible INFO| TASK [install updates (Ubuntu)] ************************************************
+2026-09-14 17:02:11,481 p=1625 u=ansible n=ansible INFO| skipping: [192.168.100.10]
+2026-09-14 17:02:11,484 p=1625 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-14 17:02:11,484 p=1625 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
