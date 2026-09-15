@@ -9864,3 +9864,48 @@ Origin: /home/ansible/ansible/site-3.yml:57:11
 2026-09-14 17:02:11,481 p=1625 u=ansible n=ansible INFO| skipping: [192.168.100.10]
 2026-09-14 17:02:11,484 p=1625 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
 2026-09-14 17:02:11,484 p=1625 u=ansible n=ansible INFO| 192.168.100.10             : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-09-15 17:19:08,922 p=1618 u=ansible n=ansible WARNING| [WARNING]: Found duplicate mapping key 'owner'.
+Origin: /home/ansible/ansible/roles/workstations/tasks/main.yml:12:5
+
+10     mode: 0755
+11     owner: root
+12     owner: root
+       ^ column 5
+
+Using last defined value only.
+
+
+2026-09-15 17:19:09,007 p=1618 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-15 17:19:09,044 p=1618 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-15 17:19:13,753 p=1618 u=ansible n=ansible WARNING| [WARNING]: Host '192.168.100.10' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-09-15 17:19:13,753 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:13,762 p=1618 u=ansible n=ansible INFO| TASK [create simon user] *******************************************************
+2026-09-15 17:19:15,742 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:15,750 p=1618 u=ansible n=ansible INFO| TASK [add ssh key for simon] ***************************************************
+2026-09-15 17:19:16,991 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:17,068 p=1618 u=ansible n=ansible INFO| TASK [add sudoers file for simon] **********************************************
+2026-09-15 17:19:19,845 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:19,851 p=1618 u=ansible n=ansible INFO| PLAY [all] *********************************************************************
+2026-09-15 17:19:19,865 p=1618 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-15 17:19:21,410 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:21,420 p=1618 u=ansible n=ansible INFO| TASK [base : add ssh key for simon] ********************************************
+2026-09-15 17:19:24,512 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:24,529 p=1618 u=ansible n=ansible INFO| PLAY [workstations] ************************************************************
+2026-09-15 17:19:24,541 p=1618 u=ansible n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-09-15 17:19:26,161 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:26,376 p=1618 u=ansible n=ansible INFO| TASK [workstations : install unzip] ********************************************
+2026-09-15 17:19:36,127 p=1618 u=ansible n=ansible INFO| ok: [192.168.100.10]
+2026-09-15 17:19:36,203 p=1618 u=ansible n=ansible INFO| TASK [workstations : install terraform] ****************************************
+2026-09-15 17:19:36,572 p=1618 u=ansible n=ansible ERROR| [ERROR]: Task failed: src (or content) and dest are required
+Origin: /home/ansible/ansible/roles/workstations/tasks/main.yml:5:3
+
+3     name: unzip
+4
+5 - name: install terraform
+    ^ column 3
+
+
+2026-09-15 17:19:36,573 p=1618 u=ansible n=ansible INFO| fatal: [192.168.100.10]: FAILED! => {"changed": false, "msg": "src (or content) and dest are required"}
+2026-09-15 17:19:36,575 p=1618 u=ansible n=ansible INFO| PLAY RECAP *********************************************************************
+2026-09-15 17:19:36,575 p=1618 u=ansible n=ansible INFO| 192.168.100.10             : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
